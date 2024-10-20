@@ -13,7 +13,7 @@ function ToDoList({ tasks }) {
     return(
         <ScrollView>
           {tasks.map((item, index)=>(
-             <Pressable>
+             <Pressable key={item}>
              <View style={[styles.task, styles.incomplete]}>
              <Text style={styles.taskText}>{item}</Text>
            </View>

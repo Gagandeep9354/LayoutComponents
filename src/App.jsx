@@ -20,11 +20,19 @@ function App() {
     'Do laundry',
     'Go to gym',
     'Walk dog'
-  ])
+  ]);
+
+  const addTask = (task) => {
+    if (!tasks.includes(task)){
+    setTasks([...tasks, task]);
+    } else {
+      alert("Duplicate entry");
+    }
+  }
   return (
     <SafeAreaView>
       <ToDoList tasks={tasks}/>
-      <ToDoForm />
+      <ToDoForm addTask={addTask}/>
     </SafeAreaView>
   );
 }
